@@ -28,49 +28,69 @@ Route::group([
             Route::get('shipping-methods/{type}', [\App\Http\Controllers\Dashboard\SettingsController::class,'editShippingMethods'])->name('edit.shippings.methods');
             Route::put('shipping-methods/{id}', [\App\Http\Controllers\Dashboard\SettingsController::class,'updateShippingMethods'])->name('update.shippings.methods');
         });
-//        Route::group(['prefix' => 'settings', 'middleware' => 'can:settings'], function () {
-//            Route::get('shipping-methods/{type}', 'SettingsController@editShippingMethods')->name('edit.shippings.methods');
-//            Route::put('shipping-methods/{id}', 'SettingsController@updateShippingMethods')->name('update.shippings.methods');
-//        });
-//
-//        Route::group(['prefix' => 'profile'], function () {
-//            Route::get('edit', 'ProfileController@editProfile')->name('edit.profile');
-//            Route::put('update', 'ProfileController@updateprofile')->name('update.profile');
-//        });
-//
-//        ################################## categories routes ######################################
-//        Route::group(['prefix' => 'main_categories'], function () {
-//            Route::get('/', 'MainCategoriesController@index')->name('admin.maincategories');
-//            Route::get('create', 'MainCategoriesController@create')->name('admin.maincategories.create');
-//            Route::post('store', 'MainCategoriesController@store')->name('admin.maincategories.store');
-//            Route::get('edit/{id}', 'MainCategoriesController@edit')->name('admin.maincategories.edit');
-//            Route::post('update/{id}', 'MainCategoriesController@update')->name('admin.maincategories.update');
-//            Route::get('delete/{id}', 'MainCategoriesController@destroy')->name('admin.maincategories.delete');
-//        });
-//
-//        ################################## end categories    #######################################
-//
-//        ################################## sub categories routes ######################################
-//        Route::group(['prefix' => 'sub_categories'], function () {
-//            Route::get('/', 'SubCategoriesController@index')->name('admin.subcategories');
-//            Route::get('create', 'SubCategoriesController@create')->name('admin.subcategories.create');
-//            Route::post('store', 'SubCategoriesController@store')->name('admin.subcategories.store');
-//            Route::get('edit/{id}', 'SubCategoriesController@edit')->name('admin.subcategories.edit');
-//            Route::post('update/{id}', 'SubCategoriesController@update')->name('admin.subcategories.update');
-//            Route::get('delete/{id}', 'SubCategoriesController@destroy')->name('admin.subcategories.delete');
-//        });
-//
-//        ################################## end categories    #######################################
-//
-//        ################################## brands routes ######################################
-//        Route::group(['prefix' => 'brands', 'middleware' => 'can:brands'], function () {
-//            Route::get('/', 'BrandsController@index')->name('admin.brands');
-//            Route::get('create', 'BrandsController@create')->name('admin.brands.create');
-//            Route::post('store', 'BrandsController@store')->name('admin.brands.store');
-//            Route::get('edit/{id}', 'BrandsController@edit')->name('admin.brands.edit');
-//            Route::post('update/{id}', 'BrandsController@update')->name('admin.brands.update');
-//            Route::get('delete/{id}', 'BrandsController@destroy')->name('admin.brands.delete');
-//        });
+        Route::group(['prefix' => 'profile'], function () {
+            Route::get('edit', [\App\Http\Controllers\Dashboard\ProfileController::class,'editProfile'])->name('edit.profile');
+            Route::put('update',[ \App\Http\Controllers\Dashboard\ProfileController::class,'updateProfile'])->name('update.profile');
+        });
+
+               ################################## categories routes ######################################
+        Route::group(['prefix' => 'main_categories'], function () {
+            Route::get('/', [\App\Http\Controllers\Dashboard\MainCategoriesController::class,'index'])->name('admin.maincategories');
+            Route::get('create', [\App\Http\Controllers\Dashboard\MainCategoriesController::class,'create'])->name('admin.maincategories.create');
+            Route::post('store', [\App\Http\Controllers\Dashboard\MainCategoriesController::class,'store'])->name('admin.maincategories.store');
+            Route::get('edit/{id}', [\App\Http\Controllers\Dashboard\MainCategoriesController::class,'edit'])->name('admin.maincategories.edit');
+            Route::post('update/{id}', [\App\Http\Controllers\Dashboard\MainCategoriesController::class,'update'])->name('admin.maincategories.update');
+            Route::get('delete/{id}', [\App\Http\Controllers\Dashboard\MainCategoriesController::class,'destroy'])->name('admin.maincategories.delete');
+        });
+
+        ################################## sub categories routes ######################################
+        Route::group(['prefix' => 'sub_categories'], function () {
+            Route::get('/', [\App\Http\Controllers\Dashboard\SubCategoriesController::class,'index'])->name('admin.subcategories');
+            Route::get('create', [\App\Http\Controllers\Dashboard\SubCategoriesController::class,'create'])->name('admin.subcategories.create');
+            Route::post('store', [\App\Http\Controllers\Dashboard\SubCategoriesController::class,'store'])->name('admin.subcategories.store');
+            Route::get('edit/{id}', [\App\Http\Controllers\Dashboard\SubCategoriesController::class,'edit'])->name('admin.subcategories.edit');
+            Route::post('update/{id}', [\App\Http\Controllers\Dashboard\SubCategoriesController::class,'update'])->name('admin.subcategories.update');
+            Route::get('delete/{id}', [\App\Http\Controllers\Dashboard\SubCategoriesController::class,'destroy'])->name('admin.subcategories.delete');
+        });
+
+        ################################## brands routes ######################################
+        Route::group(['prefix' => 'brands'], function () {
+            Route::get('/', [\App\Http\Controllers\Dashboard\BrandsController::class,'index'])->name('admin.brands');
+            Route::get('create', [\App\Http\Controllers\Dashboard\BrandsController::class,'create'])->name('admin.brands.create');
+            Route::post('store', [\App\Http\Controllers\Dashboard\BrandsController::class,'store'])->name('admin.brands.store');
+            Route::get('edit/{id}', [\App\Http\Controllers\Dashboard\BrandsController::class,'edit'])->name('admin.brands.edit');
+            Route::post('update/{id}', [\App\Http\Controllers\Dashboard\BrandsController::class,'update'])->name('admin.brands.update');
+           Route::get('delete/{id}', [\App\Http\Controllers\Dashboard\BrandsController::class,'destroy'])->name('admin.brands.delete');
+        });
+//        ################################## end brands    #######################################
+                Route::group(['prefix' => 'tags'], function () {
+            Route::get('/', [\App\Http\Controllers\Dashboard\TagsController::class,'index'])->name('admin.tags');
+           Route::get('create', [\App\Http\Controllers\Dashboard\TagsController::class,'create'])->name('admin.tags.create');
+          Route::post('store', [\App\Http\Controllers\Dashboard\TagsController::class,'store'])->name('admin.tags.store');
+            Route::get('edit/{id}', [\App\Http\Controllers\Dashboard\TagsController::class,'edit'])->name('admin.tags.edit');
+           Route::post('update/{id}', [\App\Http\Controllers\Dashboard\TagsController::class,'update'])->name('admin.tags.update');
+            Route::get('delete/{id}', [\App\Http\Controllers\Dashboard\TagsController::class,'delete'])->name('admin.tags.delete');
+        });
+//        ################################## end tags    #######################################
+
+        ################################## products routes ######################################
+        Route::group(['prefix' => 'products'], function () {
+            Route::get('/', [\App\Http\Controllers\Dashboard\ProductsController::class,'index'])->name('admin.products');
+            Route::get('general-information', [\App\Http\Controllers\Dashboard\ProductsController::class,'create'])->name('admin.products.general.create');
+            Route::post('store-general-information', [\App\Http\Controllers\Dashboard\ProductsController::class,'store'])->name('admin.products.general.store');
+
+            Route::get('price/{id}', [\App\Http\Controllers\Dashboard\ProductsController::class,'getPrice'])->name('admin.products.price');
+            Route::post('price/save', [\App\Http\Controllers\Dashboard\ProductsController::class,'saveProductPrice'])->name('admin.products.price.edit');
+            Route::post('price/create', [\App\Http\Controllers\Dashboard\ProductsController::class,'createProductPrice'])->name('admin.products.price.create');
+
+            Route::get('stock/{id}', [\App\Http\Controllers\Dashboard\ProductsController::class,'getStock'])->name('admin.products.stock');
+            Route::post('stock', [\App\Http\Controllers\Dashboard\ProductsController::class,'saveProductStock'])->name('admin.products.stock.store');
+
+            Route::get('images/{id}', [\App\Http\Controllers\Dashboard\ProductsController::class,'addImages'])->name('admin.products.images');
+            Route::post('images', [\App\Http\Controllers\Dashboard\ProductsController::class,'saveProductImages'])->name('admin.products.images.store');
+            Route::post('images/db', [\App\Http\Controllers\Dashboard\ProductsController::class,'saveProductImagesDB'])->name('admin.products.images.store.db');
+       });
+//        ################################## end products    #######################################
 //        ################################## end brands    #######################################
 //
 //

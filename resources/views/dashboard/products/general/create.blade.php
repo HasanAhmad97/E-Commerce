@@ -145,7 +145,7 @@
                                                             <label for="projectinput1"> اختر ألعلامات الدلالية
                                                             </label>
                                                             <select name="tags[]" class="select2 form-control" multiple>
-                                                                <optgroup label=" اختر ألعلامات الدلالية ">
+                                                                <optgroup label=" اختر العلامات الدلالية ">
                                                                     @if($tags && $tags -> count() > 0)
                                                                         @foreach($tags as $tag)
                                                                             <option
@@ -161,7 +161,7 @@
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> اختر ألماركة
+                                                            <label for="projectinput1"> اختر الماركة
                                                             </label>
                                                             <select name="brand_id" class="select2 form-control">
                                                                 <optgroup label="من فضلك أختر الماركة ">
@@ -205,10 +205,10 @@
                                             <div class="form-actions">
                                                 <button type="button" class="btn btn-warning mr-1"
                                                         onclick="history.back();">
-                                                    <i class="ft-x"></i> تراجع
+                                                    <i class="ft-x"></i> رجوع
                                                 </button>
                                                 <button type="submit" class="btn btn-primary">
-                                                    <i class="la la-check-square-o"></i> تحديث
+                                                    <i class="la la-check-square-o"></i> التالي
                                                 </button>
                                             </div>
                                         </form>

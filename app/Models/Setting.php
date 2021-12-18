@@ -21,7 +21,6 @@ class Setting extends Model
 
 
     protected $translatedAttributes = ['value'];
-
     /**
      * The attributes that are mass assignable.
      *

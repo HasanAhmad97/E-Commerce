@@ -26,7 +26,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">جميع الاقسام ألفرعية </h4>
+                                    <a href="{{route('admin.subcategories.create')}}" class="btn btn-primary">{{__('admin/sidebar.create new category')}}</a>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">

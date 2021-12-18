@@ -49,7 +49,7 @@
                                               enctype="multipart/form-data">
                                             @csrf
 
-                                            <input type="hidden" name="product_id" value="{{$id}}">
+                                            <input type="hidden" name="product_id" value="{{$productId}}">
                                             <div class="form-body">
 
                                                 <h4 class="form-section"><i class="ft-home"></i> اداره المستودع   </h4>

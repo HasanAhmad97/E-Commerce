@@ -44,12 +44,12 @@
                                 <div class="card-content collapse show">
                                     <div class="card-body">
                                         <form class="form"
-                                              action="{{route('admin.products.price.store')}}"
+                                              action="{{route('admin.products.price.create')}}"
                                               method="POST"
                                               enctype="multipart/form-data">
                                             @csrf
 
-                                            <input type="hidden" name="product_id" value="{{$id}}">
+                                            <input type="hidden" name="product_id" value="{{$product->id}}">
                                             <div class="form-body">
 
                                                 <h4 class="form-section"><i class="ft-home"></i> البيانات الاساسية للمنتج   </h4>
@@ -148,10 +148,10 @@
                                             <div class="form-actions">
                                                 <button type="button" class="btn btn-warning mr-1"
                                                         onclick="history.back();">
-                                                    <i class="ft-x"></i> تراجع
+                                                    <i class="ft-x"></i> رجوع
                                                 </button>
                                                 <button type="submit" class="btn btn-primary">
-                                                    <i class="la la-check-square-o"></i> تحديث
+                                                    <i class="la la-check-square-o"></i> التالي
                                                 </button>
                                             </div>
                                         </form>
